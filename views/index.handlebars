@@ -6,12 +6,12 @@
         <h2>Make a Burger</h2>
         <panel>
             <form action="/api/burgers" method="POST">
-                    <label for="new-burger">New Burger:</label>
+                    <label for="new-burger">New Burger</label>
                     <input type="text" id="newburger" name="burger_name" value="">
                     <button type="submit" class="btn btn-success">Submit</button>
             </form>
         </panel>
-    </div><!-- /jumbotron -->
+    </div>
 
     <div class="row">
         <div class="col-sm-6">
@@ -21,8 +21,7 @@
                     <ul>
                         {{#each burgers}}
                             {{#unless this.devoured}}
-                                <h5> {{this.id}} - {{this.burger_name}} </h5>
-                                <button type="button" class="eat-burger btn btn-secondary" data-id="{{this.id}}" data-newDevoured="{{this.devoured}}">Eat</button>
+                                {{> burgers/burger-block }}
                                 <hr>
                             {{/unless}}
                         {{/each}}
@@ -30,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <!-- Devoured Burgers -->
+
         <div class="col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Burgers already Eaten</strong></div>
@@ -38,8 +37,7 @@
                     <ul>
                         {{#each burgers}}
                             {{#if this.devoured}}
-                                <h5> {{this.id}} - {{this.burger_name}} </h5>
-                                <button type="button" class="trash-burger btn btn-danger" data-id="{{this.id}}" data-newDevoured="{{this.devoured}}">Delete</button>
+                                {{> burgers/eaten-block }}
                                 <hr>
                             {{/if}}
                         {{/each}}
@@ -47,6 +45,5 @@
                 </div>
             </div>
         </div>
-    </div><!-- /row -->
-
+    </div>
 </div>
