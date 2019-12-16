@@ -8,7 +8,7 @@
             <form action="/api/burgers" method="POST">
                     <label for="new-burger">New Burger:</label>
                     <input type="text" id="newburger" name="burger_name" value="">
-                    <button type="submit" class="btn btn-success" ><span class="fa fa-thumbs-up"></span></button>
+                    <button type="submit" class="btn btn-success">Submit</button>
             </form>
         </panel>
     </div><!-- /jumbotron -->
@@ -21,8 +21,8 @@
                     <ul>
                         {{#each burgers}}
                             {{#unless this.devoured}}
-                                <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                                <button type="button" class="eat-burger btn btn-warning fa fa-cutlery" data-id="{{this.id}}" data-newDevoured="{{this.devoured}}"></button>
+                                <h5> {{this.id}} - {{this.burger_name}} </h5>
+                                <button type="button" class="eat-burger btn btn-secondary" data-id="{{this.id}}" data-newDevoured="{{this.devoured}}">Eat</button>
                                 <hr>
                             {{/unless}}
                         {{/each}}
@@ -38,8 +38,8 @@
                     <ul>
                         {{#each burgers}}
                             {{#if this.devoured}}
-                                <h1> {{this.id}} - {{this.burger_name}} </strong></span>
-                                <button type="button" class="trash-burger btn btn-danger fa fa-trash" data-id="{{this.id}}" data-newDevoured="{{this.devoured}}"></button>
+                                <h5> {{this.id}} - {{this.burger_name}} </h5>
+                                <button type="button" class="trash-burger btn btn-danger" data-id="{{this.id}}" data-newDevoured="{{this.devoured}}">Delete</button>
                                 <hr>
                             {{/if}}
                         {{/each}}
