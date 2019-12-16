@@ -8,7 +8,13 @@ const printQuestionMarks = num => {
     return arr.toString();
   }
 
-// const objToSql
+const objToSql = ob => {
+    const arr = [];
+    for(let key in ob){
+        arr.push(`${key}=${ob[key]}`)
+    }
+    return arr.toString();
+}
 
 
 const orm = {

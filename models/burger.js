@@ -6,7 +6,8 @@ const burger = {
             cb(res);
         })
     },
-    create: (cb) => {
+    create: (name, cb) => {
+        console.log(this)
         orm.create('burgers', ['burger_name', 'devoured'],[name, false], cb)
     }, 
     update: (id, cb) =>{

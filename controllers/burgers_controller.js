@@ -5,7 +5,7 @@ const burger = require('../models/burger')
 router.get('/', (req, res) =>{
     burger.all((data) => {
         console.log(data);
-        res.render('index');
+        res.render('index', {burgers: data});
     })
 });
 
@@ -18,13 +18,10 @@ router.post('/api/burgers', (req, res) => {
 
 router.put('/api/burgers/:id', (req, res) => {
     burger.update(req.params.id, result => {
-        if (result.changedRows == 0) {
-            return res.status(404).end();
-          } else {
+        console.log(result);
             res.status(200).end();
-          }
+          })
     })
-})
 
 router.delete('/api/burgers/:id', (req, res) => {
     burger.delete(req.params.id, result => {
