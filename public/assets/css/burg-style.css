@@ -7,9 +7,18 @@
 body{
     padding:30px 0px;
 }
-
+.jumbotron{
+    background-image:url(../images/burg.jpg);
+    background-size:cover;
+    color:#fff;
+}
+.jumbotron h1{
+    margin-bottom:72px;
+    font-size:42pt;
+}
 form {
     display: flex;
+    color:#fff;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
